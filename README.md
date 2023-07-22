@@ -1,2 +1,2 @@
-# maxminddb-golang-example
-Приклад використання MaxMind в Go
+# Приклад використання MaxMind в Go
+https://dou.ua/forums/topic/35195/
