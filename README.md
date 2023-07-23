@@ -32,16 +32,29 @@ tree . -h
 
 # Testing
 ```bash
-go test ./... -bench=. -benchmem -benchtime=1000000x
+# make bench
+go test ./... -v -bench=. -benchmem -benchtime=1000000x -count=10 > bench.txt
+benchstat bench.txt
 ```
 ```text
 goos: linux
 goarch: amd64
 pkg: github.com/doutivity/maxminddb-golang-example
 cpu: Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz
-BenchmarkLookupTurkey-12    	 1000000	      2448 ns/op	      34 B/op	       3 allocs/op
+BenchmarkLookupTurkey
+BenchmarkLookupTurkey-12    	 1000000	      2370 ns/op	      34 B/op	       3 allocs/op
 PASS
-ok  	github.com/doutivity/maxminddb-golang-example	2.453s
+ok  	github.com/doutivity/maxminddb-golang-example	2.374s
+```
+```text
+name             time/op
+LookupTurkey-12  2.47µs ± 8%
+
+name             alloc/op
+LookupTurkey-12   34.0B ± 0%
+
+name             allocs/op
+LookupTurkey-12    3.00 ± 0%
 ```
 
 # Packages

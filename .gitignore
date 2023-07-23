@@ -21,6 +21,9 @@
 # Go workspace file
 go.work
 
+# benchstat
+bench.txt
+
 # MaxMind DB
 GeoLite2-Country_*
 GeoLite2-Country_*.tar.gz

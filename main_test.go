@@ -47,6 +47,7 @@ func BenchmarkLookupTurkey(b *testing.B) {
 
 	ipRoundRobin := NewIPV4RoundRobin(net.ParseIP("95.0.0.0"), net.ParseIP("95.7.255.255"))
 
+	b.ResetTimer()
 	b.RunParallel(func(pb *testing.PB) {
 		for pb.Next() {
 			var record Country

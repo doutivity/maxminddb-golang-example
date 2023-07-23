@@ -1,6 +1,10 @@
 test:
 	go test ./... -v -count=1
 
+bench:
+	go test ./... -v -bench=. -benchmem -benchtime=1000000x -count=10 > bench.txt
+	benchstat bench.txt
+
 # make download-maxminddb-country YOUR_LICENSE_KEY=YOUR_LICENSE_KEY
 download-maxminddb-country:
 	echo "# NOT WORKING!"
