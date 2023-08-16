@@ -1,6 +1,6 @@
 module github.com/doutivity/maxminddb-golang-example
 
-go 1.19
+go 1.21
 
 require (
 	github.com/oschwald/maxminddb-golang v1.11.0

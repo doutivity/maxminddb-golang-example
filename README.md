@@ -16,11 +16,11 @@ tree . -h
 │   ├── [ 68M]  GeoLite2-City.mmdb
 │   ├── [ 398]  LICENSE.txt
 │   └── [ 116]  README.txt
-├── [ 33M]  GeoLite2-City_20230721.tar.gz
 ├── [4.0K]  GeoLite2-Country_20230721
 │   ├── [  55]  COPYRIGHT.txt
 │   ├── [5.8M]  GeoLite2-Country.mmdb
 │   └── [ 398]  LICENSE.txt
+├── [ 33M]  GeoLite2-City_20230721.tar.gz
 ├── [3.0M]  GeoLite2-Country_20230721.tar.gz
 ├── [ 253]  go.mod
 ├── [ 881]  go.sum
@@ -47,14 +47,17 @@ PASS
 ok  	github.com/doutivity/maxminddb-golang-example	2.374s
 ```
 ```text
-name             time/op
-LookupTurkey-12  2.47µs ± 8%
+name                            time/op
+GeoLite2CountryLookupTurkey-12  2.75µs ± 4%
+GeoLite2CityLookupTurkey-12     3.23µs ± 8%
 
-name             alloc/op
-LookupTurkey-12   34.0B ± 0%
+name                            alloc/op
+GeoLite2CountryLookupTurkey-12   34.0B ± 0%
+GeoLite2CityLookupTurkey-12      34.0B ± 0%
 
-name             allocs/op
-LookupTurkey-12    3.00 ± 0%
+name                            allocs/op
+GeoLite2CountryLookupTurkey-12    3.00 ± 0%
+GeoLite2CityLookupTurkey-12       3.00 ± 0%
 ```
 
 # Packages

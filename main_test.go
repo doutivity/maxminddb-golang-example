@@ -17,12 +17,31 @@ type (
 	}
 )
 
-func TestLookupTurkey(t *testing.T) {
+const (
+	countryFile = "./GeoLite2-Country_20230721/GeoLite2-Country.mmdb"
+	cityFile    = "./GeoLite2-City_20230721/GeoLite2-City.mmdb"
+)
+
+func TestGeoLite2CountryLookupTurkey(t *testing.T) {
 	if testing.Short() {
 		t.Skip()
 	}
 
-	db, err := maxminddb.Open("./GeoLite2-Country_20230721/GeoLite2-Country.mmdb")
+	testLookupTurkey(t, countryFile)
+}
+
+func TestGeoLite2CityLookupTurkey(t *testing.T) {
+	if testing.Short() {
+		t.Skip()
+	}
+
+	testLookupTurkey(t, cityFile)
+}
+
+func testLookupTurkey(t *testing.T, file string) {
+	t.Helper()
+
+	db, err := maxminddb.Open(file)
 	require.NoError(t, err)
 	defer db.Close()
 
@@ -36,12 +55,26 @@ func TestLookupTurkey(t *testing.T) {
 	require.Equal(t, "TR", record.Country.ISOCode)
 }
 
-func BenchmarkLookupTurkey(b *testing.B) {
+func BenchmarkGeoLite2CountryLookupTurkey(b *testing.B) {
 	if testing.Short() {
 		b.Skip()
 	}
 
-	db, err := maxminddb.Open("./GeoLite2-Country_20230721/GeoLite2-Country.mmdb")
+	benchmarkLookupTurkey(b, countryFile)
+}
+
+func BenchmarkGeoLite2CityLookupTurkey(b *testing.B) {
+	if testing.Short() {
+		b.Skip()
+	}
+
+	benchmarkLookupTurkey(b, cityFile)
+}
+
+func benchmarkLookupTurkey(b *testing.B, file string) {
+	b.Helper()
+
+	db, err := maxminddb.Open(file)
 	require.NoError(b, err)
 	defer db.Close()
 
