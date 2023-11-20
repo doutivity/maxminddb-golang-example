@@ -33,3 +33,10 @@ GeoLite2-City_*
 GeoLite2-City_*.tar.gz
 GeoLite2-City.mmdb.gz
 GeoLite2-City.mmdb
+
+# IDE files
+.idea/
+.vscode
+
+# Folder with downoaded archives for GeoLite2-City and GeoLite2-Country
+geoip_download

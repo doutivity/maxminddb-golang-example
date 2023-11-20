@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package maxminddb_golang_example;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "./maxminddb_golang_example";
+
+
+message City {
+  // Field type inferred from 17 unique values in 17 rows; 5 most common:
+  // "149.101.100.0/28" (1); "175.16.199.0/24" (1); "2.125.160.216/29" (1);
+  // "2.2.3.0/24" (1); "2.3.3.0/24" (1)
+  //
+  // csv field: "network"
+  string network = 1;
+
+  // Field type inferred from 12 unique values in 17 rows; 5 most common:
+  // "2643743" (4); "2655045" (2); "2694762" (2); "1252634" (1); "1694008" (1)
+  //
+  // csv field: "geoname_id"
+  int64 geoname_id = 2;
+
+  // Field type inferred from 10 unique values in 17 rows; 5 most common:
+  // "6252001" (5); "" (2); "2635167" (2); "2921044" (2); "1694008" (1)
+  //
+  // csv field: "registered_country_geoname_id"
+  string registered_country_geoname_id = 3;
+
+  // Field type inferred from 2 unique values in 17 rows; 2 most common: ""
+  // (16); "6252001" (1)
+  //
+  // csv field: "represented_country_geoname_id"
+  string represented_country_geoname_id = 4;
+
+  // Field type inferred from 2 unique values in 17 rows; 2 most common: "0"
+  // (16); "1" (1)
+  //
+  // csv field: "is_anonymous_proxy"
+  int64 is_anonymous_proxy = 5;
+
+  // Field type inferred from 1 unique values in 17 rows; 1 most common: "0"
+  // (17)
+  //
+  // csv field: "is_satellite_provider"
+  int64 is_satellite_provider = 6;
+
+  // Field type inferred from 7 unique values in 17 rows; 5 most common: ""
+  // (11); "3000" (1); "34021" (1); "59" (1); "92105" (1)
+  //
+  // csv field: "postal_code"
+  string postal_code = 7;
+
+  // Field type inferred from 12 unique values in 17 rows; 5 most common:
+  // "51.5142" (4); "" (2); "58.4167" (2); "-37.8159" (1); "1.3360" (1)
+  //
+  // csv field: "latitude"
+  string latitude = 8;
+
+  // Field type inferred from 12 unique values in 17 rows; 5 most common:
+  // "-0.0931" (4); "" (2); "15.6167" (2); "-1.2500" (1); "-117.0935" (1)
+  //
+  // csv field: "longitude"
+  string longitude = 9;
+
+  // Field type inferred from 10 unique values in 17 rows; 5 most common: "100"
+  // (5); "" (2); "10" (2); "76" (2); "1000" (1)
+  //
+  // csv field: "accuracy_radius"
+  string accuracy_radius = 10;
+
+  google.protobuf.Timestamp sent_at = 11;
+}

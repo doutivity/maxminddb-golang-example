@@ -63,3 +63,15 @@ GeoLite2CityLookupTurkey-12       3.00 ± 0%
 # Packages
 * https://github.com/oschwald/maxminddb-golang
 * https://github.com/ip2location/ip2location-go
+
+# Download files from Maxmind DB
+How to use Makefile commands for Maxmind DB: 
+1. Set your Licence key into `export YOUR_LICENSE_KEY=.........key.......`
+2. Run `make download-maxminddb-city` and `make download-maxmind-db-country`
+
+
+# Description for Maxmind CSV files
+1. Download csv files you can here: https://dev.maxmind.com/geoip/docs/databases/city-and-country#csv-example-filesDescription 
+2. Which fields for csv files you can read here: https://dev.maxmind.com/geoip/docs/databases/city-and-country#locations-files
+3. Which databse formats Maxmind has: https://support.maxmind.com/hc/en-us/articles/4408216157723-Database-Formats
+4. How to import MaxMind's GeoLite2 Database to PostgreSQL: https://colinwilson.uk/2019/07/22/how-to-import-maxminds-geolite2-database-to-postgresql/

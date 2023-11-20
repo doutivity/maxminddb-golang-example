@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package maxminddb_golang_example;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "./maxminddb_golang_example";
+
+message Country {
+  // Field type inferred from 299 unique values in 299 rows; 5 most common:
+  // "2001:218::/32" (1); "2001:220:0:0:1000::/68" (1); "2001:220:0:0:100::/72"
+  // (1); "2001:220:0:0:10::/76" (1); "2001:220:0:0:1::/80" (1)
+  //
+  // csv field: "network"
+  string network = 1;
+
+  // Field type inferred from 42 unique values in 299 rows; 5 most common:
+  // "1835841" (103); "2017370" (30); "2921044" (18); "2635167" (15); "1861060"
+  // (14)
+  //
+  // csv field: "geoname_id"
+  int64 geoname_id = 2;
+
+  // Field type inferred from 42 unique values in 299 rows; 5 most common:
+  // "1835841" (103); "2017370" (30); "2921044" (19); "2635167" (15); "1861060"
+  // (14)
+  //
+  // csv field: "registered_country_geoname_id"
+  string registered_country_geoname_id = 3;
+
+  // Field type inferred from 1 unique values in 299 rows; 1 most common: ""
+  // (299)
+  //
+  // csv field: "represented_country_geoname_id"
+  string represented_country_geoname_id = 4;
+
+  // Field type inferred from 1 unique values in 299 rows; 1 most common: "0"
+  // (299)
+  //
+  // csv field: "is_anonymous_proxy"
+  int64 is_anonymous_proxy = 5;
+
+  // Field type inferred from 1 unique values in 299 rows; 1 most common: "0"
+  // (299)
+  //
+  // csv field: "is_satellite_provider"
+  int64 is_satellite_provider = 6;
+
+
+  google.protobuf.Timestamp sent_at = 7;
+}
