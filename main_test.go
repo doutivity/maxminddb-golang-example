@@ -5,7 +5,6 @@ import (
 	"testing"
 
 	"github.com/oschwald/maxminddb-golang"
-
 	"github.com/stretchr/testify/require"
 )
 

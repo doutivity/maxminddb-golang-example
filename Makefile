@@ -51,3 +51,9 @@ format:
 fix-imports:
 	${call colored,fixing imports...}
 	./scripts/fix-imports-order.sh
+
+## lint project
+.PHONY: lint
+lint:
+	${call colored,lint is running...}
+	./scripts/linters.sh
